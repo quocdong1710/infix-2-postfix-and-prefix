@@ -21,7 +21,9 @@ vector<char> postfix(vector<char> c){
 				res.push_back(operators.top());	
 				operators.pop();
 			}
-			operators.pop();
+			if (!operators.empty()) {
+                operators.pop();
+            }
 		}
 		else{
 			while(!operators.empty() && precedence(operators.top()) >= precedence(c[i])){
@@ -58,6 +60,7 @@ vector<char> prefix(vector<char> c){
 int main() {
     vector<char> expression;
     int n;
+    cout<<"cin n so hang"<<endl;
     cin >>n;
     for(int i=0;i<n;i++){
     	char a;
